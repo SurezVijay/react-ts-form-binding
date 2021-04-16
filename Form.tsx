@@ -25,7 +25,7 @@ inputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
    })
 }
 
-handleChanges = () => {
+handleChanges = (e) => {
     e.preventdefault()
     console.log(` State : ${JSON.stringify(this.state.users)}`)
 }
