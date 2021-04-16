@@ -12,7 +12,10 @@ class Form extends React.Component<IProps,IState> {
   constructor(props:IProps){
     super(props);
     this.state = {
-      users : {} as IUser
+      users : {
+        username : '',
+        email : ''
+      }
     }
   }
 
@@ -25,8 +28,8 @@ inputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
    })
 }
 
-handleChanges = (e) => {
-    e.preventdefault()
+handleChanges = (event) => {
+    event.preventDefault()
     console.log(` State : ${JSON.stringify(this.state.users)}`)
 }
 
