@@ -25,6 +25,11 @@ inputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
    })
 }
 
+handleChanges = () => {
+    e.preventdefault()
+    console.log(` State : ${JSON.stringify(this.state.users)}`)
+}
+
   render(){
     return(
       <div>
@@ -38,7 +43,7 @@ inputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
                   <h3 className="card-title"> React Form Binding </h3>
                 </div>   
                 <div className="card-body">
-                  <form>
+                  <form onSubmit={this.handleChanges}>
                    <div className="form-control-group">
                    <label className="form-control-item mr-4 mb-3"> UserName </label>
                    <input type="text" name="username" 
@@ -47,12 +52,18 @@ inputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
                    className="form-control-item"/>
                    </div>
                     <div className="form-control-group">
-                   <label className="form-control-item mr-2"> Email Address </label>
+                   <label className="form-control-item mr-2 "> Email Address </label>
                    <input type="text" name="email" 
                    value={this.state.users.email}
                    onChange={this.inputChange}
                    className="form-control-item"/>
                    </div>
+                   <button 
+                   className="btn btn-primary mt-2"
+                   type="submit"> Submit </button>
+                   <button 
+                   className="btn btn-primary mt-2 ml-3"
+                   type="submit"> Cancel </button>
                   </form>
                 </div>              
                </div>
